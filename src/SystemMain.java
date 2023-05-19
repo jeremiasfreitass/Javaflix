@@ -1,9 +1,11 @@
+import br.com.alura.javaflix.model.Film;
+
 public class SystemMain {
     public static void main(String[] args) {
         Film film1 = new Film();
-        film1.name = "Eu sou a Lenda";
-        film1.releaseYear = 2008;
-        film1.durationInMinutes = 131;
+        film1.setName("Eu sou a Lenda");
+        film1.setReleaseYear(2008);
+        film1.setDurationInMinutes(131);
 
         film1.displayTechnicalSheet();
 
