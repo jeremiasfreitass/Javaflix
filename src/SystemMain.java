@@ -1,4 +1,6 @@
+import br.com.alura.javaflix.calculation.RecommendationFilter;
 import br.com.alura.javaflix.calculation.TimeCalculator;
+import br.com.alura.javaflix.model.Episode;
 import br.com.alura.javaflix.model.Film;
 import br.com.alura.javaflix.model.Serie;
 
@@ -31,6 +33,14 @@ public class SystemMain {
         timeCalculator.includes(film1);
         timeCalculator.includes(serie1);
         System.out.println(timeCalculator.getTotalTime());
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.filter(film1);
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setTotalViews(300);
+        filter.filter(episode);
 
     }
 }
