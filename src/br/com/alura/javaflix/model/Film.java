@@ -6,6 +6,10 @@ import java.lang.System;
 public class Film extends Title implements Sortable {
     private String diretor;
 
+    public Film(String name) {
+        this.setName(name);
+    }
+
     public String getDiretor() {
         return diretor;
     }
@@ -17,5 +21,10 @@ public class Film extends Title implements Sortable {
     @Override
     public int getSortable() {
         return (int) getAverage() / 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Fime: " + this.getName() + " (" + this.getReleaseYear() + ")";
     }
 }

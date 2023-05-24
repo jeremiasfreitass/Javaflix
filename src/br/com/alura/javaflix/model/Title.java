@@ -3,13 +3,22 @@ package br.com.alura.javaflix.model;
 public class Title {
     private String name;
     private int releaseYear;
+
     private boolean includedInThePlan;
+
     private double sumOfRatings;
     private int totalRatings;
     private int durationInMinutes;
+    public String getName() {
+        return name;
+    }
 
     public int getTotalRatings() {
         return totalRatings;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
     public void setName(String name) {
