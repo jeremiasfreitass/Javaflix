@@ -1,3 +1,5 @@
+package br.com.alura.javaflix.main;
+
 import br.com.alura.javaflix.calculation.RecommendationFilter;
 import br.com.alura.javaflix.calculation.TimeCalculator;
 import br.com.alura.javaflix.model.Episode;
@@ -8,8 +10,7 @@ import java.util.ArrayList;
 
 public class SystemMain {
     public static void main(String[] args) {
-        Film film1 = new Film("Nome Filme1");
-        film1.setReleaseYear(2008);
+        Film film1 = new Film("Nome Filme1",2008 );
         film1.setDurationInMinutes(131);
 
         film1.displayTechnicalSheet();
@@ -21,9 +22,7 @@ public class SystemMain {
         System.out.println("Total de avaliações: " + film1.getTotalRatings());
         System.out.println(film1.getAverage());
 
-        Serie serie1 = new Serie();
-        serie1.setName("La Casa de Papel");
-        serie1.setReleaseYear(2020);
+        Serie serie1 = new Serie("Nome Série1",2020);
         serie1.setSeasons(2);
         serie1.setEpisodesBySeason(10);
         serie1.setMinutesByEpisode(60);
@@ -43,9 +42,7 @@ public class SystemMain {
         episode.setTotalViews(300);
         filter.filter(episode);
 
-        var film2 = new Film("Nome Filme2");
-        //film2.setName();
-        film2.setReleaseYear(2005);
+        var film2 = new Film("Nome Filme2",2005);
         film2.setDiretor("Diretor do filme 2");
         film2.setDurationInMinutes(130);
         film2.evaluate(10);

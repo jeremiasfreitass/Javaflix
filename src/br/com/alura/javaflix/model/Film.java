@@ -6,8 +6,8 @@ import java.lang.System;
 public class Film extends Title implements Sortable {
     private String diretor;
 
-    public Film(String name) {
-        this.setName(name);
+    public Film(String name, int releaseYear) {
+        super(name, releaseYear);
     }
 
     public String getDiretor() {
