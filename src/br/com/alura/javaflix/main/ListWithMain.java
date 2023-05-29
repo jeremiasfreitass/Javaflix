@@ -24,6 +24,8 @@ public class ListWithMain {
         listOfTitle.add(film3);
         listOfTitle.add(serie1);
 
+        System.out.println(listOfTitle.size());
+
         for (Title item: listOfTitle) {
             System.out.println(item.getName());
             if (item instanceof Film film && film.getAverage() > 2) {
