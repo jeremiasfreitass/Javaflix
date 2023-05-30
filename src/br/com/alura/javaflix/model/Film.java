@@ -25,6 +25,6 @@ public class Film extends Title implements Sortable {
 
     @Override
     public String toString() {
-        return "Fime: " + this.getName() + " (" + this.getReleaseYear() + ")";
+        return "Filme: " + this.getName() + " (" + this.getReleaseYear() + ")";
     }
 }

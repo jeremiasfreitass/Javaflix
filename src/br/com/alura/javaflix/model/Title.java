@@ -1,6 +1,6 @@
 package br.com.alura.javaflix.model;
 
-public class Title {
+public class Title implements Comparable<Title>{
     private String name;
     private int releaseYear;
 
@@ -59,5 +59,10 @@ public class Title {
 
     public int getDurationInMinutes() {
         return durationInMinutes;
+    }
+
+    @Override
+    public int compareTo(Title o) {
+        return this.getName().compareTo(o.getName());
     }
 }
