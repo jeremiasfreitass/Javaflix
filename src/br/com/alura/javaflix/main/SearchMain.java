@@ -14,15 +14,15 @@ import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class SearchMain {
-        public static void main (String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Buscar filme: ");
-            var search = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Buscar filme: ");
+        var search = scanner.nextLine();
 
-            String address = "https://www.omdbapi.com/?t=" + search + "&apikey=45c3eb3f";
+        String address = "https://www.omdbapi.com/?t=" + search.replace(" ", "+") + "&apikey=45c3eb3f";
 
-
+        try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(address))
@@ -38,15 +38,17 @@ public class SearchMain {
                     .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                     .create();
 
-            //Title myTitle = gson.fromJson(json, Title.class);
-
             TitleOmdb myTitleOmdb = gson.fromJson(json, TitleOmdb.class);
             System.out.println(myTitleOmdb);
 
+
             Title myTitle = new Title(myTitleOmdb);
-
             System.out.println("Titulo convertido: " + myTitle);
-
-
+        } catch (NumberFormatException e) {
+            System.out.println("Ocorreu um erro!");
+            System.out.println(e.getMessage());
         }
+
+
     }
+}

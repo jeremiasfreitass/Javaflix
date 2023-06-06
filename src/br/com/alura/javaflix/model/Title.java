@@ -3,9 +3,7 @@ package br.com.alura.javaflix.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title>{
-    @SerializedName("Title")
     private String name;
-    @SerializedName("Year")
     private int releaseYear;
 
     private boolean includedInThePlan;
@@ -22,7 +20,7 @@ public class Title implements Comparable<Title>{
     public Title(TitleOmdb myTitleOmdb) {
         this.name = myTitleOmdb.title();
         this.releaseYear = Integer.valueOf(myTitleOmdb.year());
-        this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0,2));
+        this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0,3));
     }
 
     public String getName() {
