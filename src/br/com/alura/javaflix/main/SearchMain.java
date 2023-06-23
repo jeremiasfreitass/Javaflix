@@ -1,5 +1,6 @@
 package br.com.alura.javaflix.main;
 
+import br.com.alura.javaflix.exception.ConversionYearException;
 import br.com.alura.javaflix.model.Title;
 import br.com.alura.javaflix.model.TitleOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -47,8 +48,13 @@ public class SearchMain {
         } catch (NumberFormatException e) {
             System.out.println("Ocorreu um erro!");
             System.out.println(e.getMessage());
+        }catch (IllegalArgumentException e){
+            System.out.println("Algum erro de argumento na busca, verifique o endereço");
+        }catch (ConversionYearException e){
+            System.out.println(e.getMessage());
         }
 
+        System.out.println("Finalizou corretamente.");
 
     }
 }
